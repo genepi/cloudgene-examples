@@ -1,7 +1,6 @@
 name: lukfor/cloudburst
-description: CloudBurst is a new parallel read-mapping algorithm optimized for mapping next-generation sequence data to the human genome and other reference genomes (Michael Schatz et. al).
+description: Highly Sensitive Short Read Mapping with MapReduce
 maintainer: Lukas Forer (lukas.forer@i-med.ac.at)
 version: 1.1.0
 dependencies: cloudgene-MRv1
-export: data
 workflows: cloudgene.yaml
