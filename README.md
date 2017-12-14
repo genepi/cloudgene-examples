@@ -34,23 +34,25 @@ git clone https://github.com/lukfor/cloudgene-examples.git
 ### Commands and Bash
 
 ```bash
-./cloudgene run print-text.yaml
+./cloudgene run print-text.yaml --message "Hello World"
 ```
 
 ```bash
-./cloudgene run print-text-to-file.yaml
+./cloudgene run print-text-to-file.yaml --message "Hello World"
 ```
 
 ### More complex tasks using Java or Groovy
 
 ```bash
 ./cloudgene run hello-groovy.yaml
+./cloudgene run hello-groovy.yaml --name Lukas
 ```
+
 
 ### Docker
 
-You need [Docker](https://www.docker.com/) installed to run this example:
+You need [Docker](https://www.docker.com/) installed on your computer to run this example:
 
 ```bash
-./cloudgene run vcf-tools.yaml
+./cloudgene run vcf-tools.yaml --vcf vcf-file.vcf.gz
 ```
