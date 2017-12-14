@@ -1,0 +1,15 @@
+name: print text to file
+version: 1.0
+workflow:
+  steps:
+    - name: Write text to file using pipes
+      cmd: /bin/echo $message > $output
+      bash: true
+  inputs:
+    - id: message
+      description: Message
+      type: text
+  outputs:
+    - id: output
+      description: Output File
+      type: local-file
