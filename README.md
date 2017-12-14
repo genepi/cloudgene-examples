@@ -23,7 +23,7 @@ Test the installation with the following command:
 
 Now you are ready!
 
-## Download Exampels
+## Download Examples
 
 ```bash
 git clone https://github.com/lukfor/cloudgene-examples.git
