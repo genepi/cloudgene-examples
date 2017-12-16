@@ -1,0 +1,21 @@
+name: fastqc
+version: 1.0
+workflow:
+  steps:
+    - name: Run FastQC
+      type: docker
+      image: biocontainers/fastqc
+      cmd: fastqc $fastq --outdir=$output --extract
+    - name: Summary Statistics
+      type: groovy
+      script: scripts/fastqc-summary.groovy
+      fastqc_output: $output
+  inputs:
+    - id: fastq
+      description: fastq file
+      type: local-file
+  outputs:
+    - id: output
+      description: outpu folder
+      type: local-folder
+      download: true
