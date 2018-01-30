@@ -13,7 +13,7 @@ Download the latest version from our download page using the following commands:
 
 * `mkdir cloudgene`
 * `cd cloudgene`
-* `curl -fsSL cloudgene.uibk.ac.at/install | bash`
+* `curl -s install.cloudgene.io | bash`
 
 Test the installation with the following command:
 
@@ -26,7 +26,7 @@ Now you are ready!
 ## Download Examples
 
 ```bash
-git clone https://github.com/lukfor/cloudgene-examples.git
+git clone https://github.com/genepi/cloudgene-examples.git
 ```
 
 ## Run Examples
@@ -51,7 +51,7 @@ git clone https://github.com/lukfor/cloudgene-examples.git
 
 ### Docker
 
-You need [Docker](https://www.docker.com/) installed on your computer to run this example:
+You need [Docker](https://www.docker.com/) installed on your computer to run this example. This workflow starts a Docker container containg vcf-tools and calculates the allele frequency of the provided VCF file:
 
 ```bash
 ./cloudgene run vcf-tools.yaml --vcf vcf-file.vcf.gz
