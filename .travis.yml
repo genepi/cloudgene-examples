@@ -1,0 +1,14 @@
+sudo: required #is required to use docker service in travis
+
+language: java
+jdk:
+- oraclejdk8
+
+services:
+  - docker
+
+script:
+  - bash test_runner.sh
+
+after_success:
+  - docker --version  # document the version travis is using

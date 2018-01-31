@@ -1,0 +1,17 @@
+name: Allele Frequencies from VCF
+version: 1.0
+workflow:
+  steps:
+    - name: Calculate frequencies
+      type: docker
+      image: biocontainers/vcftools
+      cmd:  vcftools --gzvcf $vcf --freq --out $output
+      stdout: true
+  inputs:
+    - id: vcf
+      description: VCF File
+      type: local-file
+  outputs:
+    - id: output
+      description: Frequencies
+      type: local-file

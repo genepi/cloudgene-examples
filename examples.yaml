@@ -1,0 +1,14 @@
+id: fastqc
+url: fastqc/fastqc.yaml
+---
+id: hello-groovy
+url: hello-groovy/hello-groovy.yaml
+---
+id: print-text-to-file
+url: print-text-to-file/print-text-to-file.yaml
+---
+id: print-text
+url: print-text/print-text.yaml
+---
+id: vcf-tools
+url: vcf-tools/vcf-tools.yaml

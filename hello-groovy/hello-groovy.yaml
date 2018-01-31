@@ -1,0 +1,12 @@
+name: Groovy test
+version: 1.0
+workflow:
+  steps:
+    - name: Execute Groovy step
+      type: groovy
+      script: say-hello.groovy
+  inputs:
+    - id: name
+      description: Name
+      type: text
+      value: World
