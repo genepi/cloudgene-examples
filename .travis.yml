@@ -8,6 +8,9 @@ services:
   - docker
 
 script:
+  - echo 'DOCKER_OPTS="-D=true -H=unix:///var/run/docker.sock -H=tcp://127.0.0.1:2375"' | sudo tee /etc/default/docker
+  - sudo restart docker
+  - sleep 10
   - bash test_runner.sh
 
 after_success:
