@@ -1,0 +1,32 @@
+name: HTML Widgets and HTML Reports
+version: 1.0.0
+workflow:
+  steps:
+
+    - name: Write json file
+      type: groovy
+      script: write-json.groovy
+      output: ${data}.json
+
+    - name: DataTable Widget
+      type: html_widget
+      template: datatables_widget.html
+      scripts: https://code.jquery.com/jquery-3.3.1.js, https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js, https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js
+      stylesheet: https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css, https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css
+      example: ${data}.json
+
+    - name: DataTable and Highcharts Report
+      type: html_widget
+      template: report_template.html
+      scripts: https://code.jquery.com/jquery-3.3.1.js, https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js, https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js, https://code.highcharts.com/highcharts.js
+      stylesheet: https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css, https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css
+      output: ${report}.html
+      example: ${data}.json
+
+  outputs:
+    - id: data
+      description: JSON Output
+      type: local-file
+    - id: report
+      description: Html Report
+      type: local-file
