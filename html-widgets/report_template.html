@@ -1,22 +1,99 @@
-<table id="example" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-                <th>quote</th>
-                <th>number</th>
-            </tr>
-        </thead>
+<script src="assets/bootbox.min.js"></script>
+
+<nav class="navbar navbar-inverse">
+  <div class="container">
+
+    <!-- BRAND -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#alignment-example" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="assets/logo.png" style="height: 30px;"></a>
+    </div>
+
+    <!-- COLLAPSIBLE NAVBAR -->
+    <div class="collapse navbar-collapse" id="alignment-example">
+
+      <!-- Links -->
+      <ul class="nav navbar-nav">
+        <li><a href="#datatable">Datatable</a></li>
+        <li><a href="#highcharts">Highcharts</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="row">
+    <a name="datatable"><h2>Data Table</h2></a>
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+      <thead>
+        <tr>
+          <th>quote</th>
+          <th>number</th>
+        </tr>
+      </thead>
     </table>
+  </div>
+
+  <div class="row">
+    <a name="highcharts"><h2>Highcharts</h2></a>
+
+    <div id="container" style="width:100%; height:400px;"></div>
+
+  </div>
+</div>
+
 
 <script>
+  $(document).ready(function() {
+    $('#example').DataTable({
+      data: ${example},
+      "columns": [{
+          "data": "number"
+        },
+        {
+          "data": "quote"
+        }
+      ]
+    });
 
-$(document).ready(function() {
-    $('#example').DataTable( {
-        data: ${example},
-        "columns": [
-            { "data": "number" },
-            { "data": "quote" }
-        ]
-    } );
-} );
+    $('#example tbody').on( 'click', 'tr', function () {
+      bootbox.alert('clicked');
+    });
+
+    var myChart = Highcharts.chart('container', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Fruit Consumption'
+            },
+            xAxis: {
+                categories: ['Apples', 'Bananas', 'Oranges']
+            },
+            yAxis: {
+                title: {
+                    text: 'Fruit eaten'
+                }
+            },
+            series: [{
+                name: 'Jane',
+                data: [1, 0, 4]
+            }, {
+                name: 'John',
+                data: [5, 7, 3]
+            }]
+        });
+
+
+  });
+
 
 </script>
