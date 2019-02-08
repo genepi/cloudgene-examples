@@ -1,0 +1,12 @@
+name: Hello Java
+version: 1.0
+workflow:
+  steps:
+    - name: Say Hello
+      jar: cloudgene-java-examples.jar
+      classname: cloudgene.examples.SayHelloStep
+  inputs:
+    - id: name
+      description: Name
+      type: text
+      value: Max Mustermann
