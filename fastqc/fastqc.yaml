@@ -1,3 +1,4 @@
+id: fastqc
 name: fastqc
 version: 1.0
 workflow:
