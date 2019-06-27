@@ -1,6 +1,0 @@
-name: lukfor/cloudburst
-description: Highly Sensitive Short Read Mapping with MapReduce
-maintainer: Lukas Forer (lukas.forer@i-med.ac.at)
-version: 1.1.0
-dependencies: cloudgene-MRv1
-workflows: cloudgene.yaml
