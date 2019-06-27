@@ -1,4 +1,5 @@
-name: Groovy test
+id: hello-grovy
+name: Hello Grovy
 version: 1.0
 workflow:
   steps:
