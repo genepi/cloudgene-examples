@@ -1,0 +1,27 @@
+id: fastqc-multiqc
+name: FastQC and MultiQC
+version: 1.0.0
+workflow:
+  steps:
+    - name: Running FastQC
+      type: docker
+      image: biocontainers/fastqc:v0.11.5
+      cmd: fastqc ${fastq} --outdir=${output} --extract
+    - name: Running MultiQC
+      type: docker
+      image: ewels/multiqc:v1.7
+      cmd: multiqc ${output} --filename ${report}
+  inputs:
+    - id: fastq
+      description: Fastq file
+      type: local-file
+      accept: .fastq,.fq
+  outputs:
+    - id: output
+      description: FastQC Output Folder
+      type: local-folder
+      download: false
+    - id: report
+      description: MultiQC Report
+      type: local-file
+      download: true

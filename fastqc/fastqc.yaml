@@ -1,9 +1,9 @@
 id: fastqc
-name: fastqc
+name: FastQC
 version: 1.2.0
 workflow:
   steps:
-    - name: Run FastQC
+    - name: Running FastQC
       type: docker
       image: biocontainers/fastqc:v0.11.5
       cmd: fastqc $fastq --outdir=$output --extract
@@ -13,10 +13,10 @@ workflow:
       fastqc_output: $output
   inputs:
     - id: fastq
-      description: fastq file
+      description: Fastq file
       type: local-file
   outputs:
     - id: output
-      description: outpu folder
+      description: FastQC Output Folder
       type: local-folder
       download: true
