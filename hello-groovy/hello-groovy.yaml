@@ -1,5 +1,5 @@
-id: hello-grovy
-name: Hello Grovy
+id: hello-groovy
+name: Hello Groovy
 version: 1.0
 workflow:
   steps:
